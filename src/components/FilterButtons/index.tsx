@@ -17,14 +17,20 @@ export const FilterButtons: React.FC<FilterButtonsProps> = ({
   );
 
   return (
-    <div>
-      {["all", "completed", "incomplete"].map((filter) => (
+    <div className="flex justify-center gap-4 text-gray-700  text-center text-xl ">
+      {["All", "Completed", "Incomplete"].map((filter) => (
         <button
-          key={filter}
+          key={filter.toLowerCase()}
           onClick={() =>
-            handleFilterClick(filter as "all" | "completed" | "incomplete")
+            handleFilterClick(
+              filter.toLowerCase() as "all" | "completed" | "incomplete"
+            )
           }
-          style={{ fontWeight: currentFilter === filter ? "bold" : "normal" }}
+          className="hover:text-green-400 "
+          style={{
+            fontWeight:
+              currentFilter === filter.toLowerCase() ? "bold" : "normal",
+          }}
         >
           {" "}
           {filter}{" "}

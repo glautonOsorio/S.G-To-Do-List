@@ -14,10 +14,14 @@ export const TaskInput = forwardRef<HTMLInputElement, TaskInputProps>(
       }
     };
     return (
-      <input ref={ref} placeholder={placeholder} onKeyDown={handleKeyDown} />
+      <input
+        ref={ref}
+        placeholder={placeholder}
+        onKeyDown={handleKeyDown}
+        className="flex w-full text-gray-600 p-2 border-2 border-green-400 rounded-md text-lg bg-gray-50"
+      />
     );
   }
 );
 
-TaskInput.displayName = 'TaskInput';
-
+TaskInput.displayName = "TaskInput";
